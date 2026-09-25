@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jingyang Zhang — Research portfolio in GaN semiconductor devices, power electronics and optoelectronic integration." />
+  <title>Jingyang Zhang — Research Portfolio</title>
+
+  <style>
+    :root{
+      --bg:#f7f9fc;
+      --panel:#ffffff;
+      --panel-soft:#f2f6fb;
+      --text:#101828;
+      --muted:#667085;
+      --line:#e4eaf2;
+      --blue:#2768f5;
+      --cyan:#12b5cb;
+      --deep:#12335f;
+      --shadow:0 24px 70px rgba(34,59,92,.10);
+      --radius:26px;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 88% 4%, rgba(39,104,245,.10), transparent 25rem),
+        radial-gradient(circle at 5% 18%, rgba(18,181,203,.08), transparent 24rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   "Helvetica Neue", Arial, sans-serif;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .container{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+
+    .grid-bg{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      opacity:.6;
+      background-image:
+        linear-gradient(rgba(71,94,126,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(71,94,126,.025) 1px, transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,#000,transparent 88%);
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(18px);
+      background:rgba(247,249,252,.82);
+      border-bottom:1px solid rgba(228,234,242,.85);
+    }
+
+    .nav-inner{
+      height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:14px;
+      font-weight:760;
+      letter-spacing:.045em;
+    }
+
+    .brand-mark{
+      width:30px;height:30px;border-radius:9px;
+      position:relative;overflow:hidden;
+      background:linear-gradient(140deg,var(--blue),var(--cyan));
+      box-shadow:0 8px 22px rgba(39,104,245,.18);
+    }
+
+    .brand-mark:before,
+    .brand-mark:after{
+      content:"";
+      position:absolute;
+      left:-8px;right:-8px;
+      height:1px;
+      background:rgba(255,255,255,.9);
+      transform:rotate(-34deg);
+    }
+    .brand-mark:before{top:11px}
+    .brand-mark:after{top:19px}
+
+    .nav-links{display:flex;gap:26px;color:var(--muted);font-size:13px;font-weight:600}
+    .nav-links a:hover{color:var(--text)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:42px;
+      padding:0 18px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.86);
+      color:var(--text);
+      font-size:13px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 25px rgba(34,59,92,.08);
+    }
+
+    .btn.primary{
+      color:#fff;
+      border-color:transparent;
+      background:linear-gradient(135deg,var(--blue),#4a7df1 58%,var(--cyan));
+      box-shadow:0 12px 28px rgba(39,104,245,.19);
+    }
+
+    /* HERO / PERSONAL INTRODUCTION */
+    .hero{
+      min-height:610px;
+      display:grid;
+      grid-template-columns:390px 1fr;
+      gap:76px;
+      align-items:center;
+      padding:82px 0 78px;
+    }
+
+    .photo-wrap{
+      position:relative;
+      padding:16px;
+      border-radius:34px;
+      background:rgba(255,255,255,.75);
+      border:1px solid rgba(214,224,237,.95);
+      box-shadow:var(--shadow);
+    }
+
+    .photo{
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:center 18%;
+      border-radius:24px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:18px;
+      color:var(--blue);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .eyebrow:before{
+      content:"";
+      width:34px;
+      height:1px;
+      background:currentColor;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(52px,7vw,86px);
+      line-height:.96;
+      letter-spacing:-.058em;
+      font-weight:800;
+    }
+
+    .role{
+      margin:22px 0 0;
+      color:var(--deep);
+      font-size:20px;
+      font-weight:670;
+      letter-spacing:-.015em;
+    }
+
+    .intro{
+      margin:20px 0 0;
+      max-width:710px;
+      color:#59667a;
+      font-size:17px;
+      line-height:1.78;
+    }
+
+    .hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+
+    .hero-contact-line{
+      margin-top:16px;
+      font-size:13px;
+      font-weight:700;
+      color:var(--blue);
+    }
+
+    .hero-contact-line a:hover{
+      text-decoration:underline;
+    }
+
+    .hero-motto{
+      margin-top:18px;
+      color:#44526a;
+      font-size:13px;
+      line-height:1.7;
+    }
+
+    .hero-motto-en{
+      color:var(--muted);
+      font-style:italic;
+      font-size:12px;
+    }
+
+
+    section{padding:96px 0}
+
+    .section-head{
+      display:block;
+      margin-bottom:40px;
+    }
+
+    .section-head h2{
+      white-space:nowrap;
+    }
+
+    .section-kicker{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
+    h2{
+      margin:0;
+      font-size:clamp(38px,5vw,58px);
+      line-height:1.03;
+      letter-spacing:-.045em;
+    }
+
+    .section-head p{
+      margin:0;
+      justify-self:end;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.8;
+      max-width:480px;
+    }
+
+    /* EDUCATION */
+    .education-list{
+      border-top:1px solid var(--line);
+    }
+
+    .education-row{
+      display:grid;
+      grid-template-columns:180px minmax(0,1fr) 230px;
+      gap:34px;
+      align-items:start;
+      padding:30px 4px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .education-year{
+      color:var(--blue);
+      font-size:12px;
+      font-weight:780;
+      letter-spacing:.02em;
+      padding-top:4px;
+      white-space:nowrap;
+    }
+
+    .education-main h3{
+      margin:0 0 6px;
+      font-size:20px;
+      line-height:1.25;
+      letter-spacing:-.022em;
+    }
+
+    .education-degree{
+      color:#44526a;
+      font-size:14px;
+      font-weight:650;
+    }
+
+    .education-meta{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.75;
+      text-align:right;
+    }
+
+    .education-meta strong{
+      color:#344054;
+      font-weight:650;
+    }
+
+    /* RESEARCH */
+    .projects{display:grid;gap:22px}
+
+    .project-card{
+      padding:28px 30px 30px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:rgba(255,255,255,.92);
+      box-shadow:0 10px 28px rgba(34,59,92,.04);
+      transition:.22s ease;
+    }
+
+    .project-card:hover{
+      transform:translateY(-2px);
+      border-color:#ccd9eb;
+      box-shadow:0 18px 40px rgba(34,59,92,.075);
+    }
+
+    .project-head{
+      margin-bottom:18px;
+    }
+
+    .project-head .project-no{
+      margin-bottom:8px;
+      display:block;
+    }
+
+    .project-title{
+      margin:0;
+      font-size:21px;
+      line-height:1.22;
+      letter-spacing:-.02em;
+    }
+
+    .project-layout-side{
+      display:grid;
+      grid-template-columns:minmax(360px, 1.02fr) minmax(0, 1fr);
+      gap:24px;
+      align-items:start;
+    }
+
+    .project-layout-side.image-wide{
+      grid-template-columns:minmax(0, 7fr) minmax(260px, 3fr);
+    }
+
+    .project-layout-stack{
+      display:grid;
+      gap:22px;
+    }
+
+    .project-media{
+      border:none;
+      border-radius:0;
+      background:#fff;
+      overflow:hidden;
+      padding:0;
+    }
+
+    .project-media img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      background:#fff;
+    }
+
+    .project-layout-side .project-media{
+      min-height:250px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .project-layout-stack .project-media{
+      padding:0;
+    }
+
+    .project-layout-stack .project-media img{
+      width:100%;
+      max-height:420px;
+      object-fit:contain;
+    }
+
+    .project-body{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      min-width:0;
+    }
+
+    .project-text{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.82;
+    }
+
+    .project-layout-side.image-wide .project-body{
+      min-height:170px;
+      justify-content:flex-start;
+    }
+
+    .project-layout-stack .project-text{
+      max-width:92%;
+    }
+
+    .project-meta{
+      color:#475467;
+      font-size:12px;
+      font-weight:700;
+      line-height:1.6;
+    }
+
+    .project-meta strong{
+      color:var(--blue);
+      font-size:22px;
+      letter-spacing:-.04em;
+      display:block;
+      margin-bottom:2px;
+    }
+
+    /* SKILLS */
+    .skills{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
+    }
+
+    .skill-card{
+      padding:34px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:rgba(255,255,255,.84);
+    }
+
+    .skill-card h3{margin:0 0 24px;font-size:21px}
+
+    .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+
+    .skill{
+      padding:16px;
+      border-radius:15px;
+      background:#f8fafc;
+      border:1px solid #e7edf4;
+    }
+
+    .skill strong{display:block;font-size:13px}
+    .skill span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+
+    .focus-list{display:grid;gap:13px;margin:0;padding:0;list-style:none}
+    .focus-list li{
+      padding-bottom:13px;
+      border-bottom:1px solid var(--line);
+      color:#4f5c70;
+      font-size:13px;
+    }
+    .focus-list li:last-child{border-bottom:0;padding-bottom:0}
+    .focus-list b{color:var(--blue);margin-right:9px}
+
+    /* PUBLICATIONS */
+    .pubs{display:grid;gap:12px}
+    .pub{
+      display:grid;
+      grid-template-columns:150px 1fr;
+      gap:24px;
+      padding:22px 26px;
+      border-radius:18px;
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+    }
+    .journal{
+      color:var(--blue);
+      font-size:11px;
+      font-weight:800;
+      line-height:1.55;
+    }
+    .pub-title{
+      font-size:14px;
+      font-weight:700;
+      line-height:1.5;
+      letter-spacing:-.008em;
+    }
+    .pub-authors{
+      margin-top:7px;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.7;
+    }
+    .pub-me{
+      color:#344054;
+      font-weight:850;
+    }
+
+    .pub-more{
+      margin-top:16px;
+    }
+    .pub-more summary{
+      list-style:none;
+      cursor:pointer;
+      user-select:none;
+      width:max-content;
+      display:flex;
+      align-items:center;
+      gap:9px;
+      min-height:42px;
+      padding:0 17px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.86);
+      color:#344054;
+      font-size:12px;
+      font-weight:750;
+      transition:.2s ease;
+    }
+    .pub-more summary::-webkit-details-marker{display:none}
+    .pub-more summary:hover{
+      border-color:#ccd9eb;
+      box-shadow:0 8px 22px rgba(34,59,92,.07);
+    }
+    .summary-close{display:none}
+    .pub-more[open] .summary-open{display:none}
+    .pub-more[open] .summary-close{display:inline}
+    .summary-arrow{
+      color:var(--blue);
+      font-size:15px;
+      line-height:1;
+      transition:transform .2s ease;
+    }
+    .pub-more[open] .summary-arrow{transform:rotate(180deg)}
+    .pub-hidden-list{margin-top:12px}
+
+    .contact{
+      padding:56px;
+      border-radius:30px;
+      border:1px solid #d7e1ee;
+      background:
+        radial-gradient(circle at 88% 16%,rgba(18,181,203,.13),transparent 18rem),
+        radial-gradient(circle at 7% 88%,rgba(39,104,245,.12),transparent 20rem),
+        rgba(255,255,255,.84);
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:32px;
+      align-items:end;
+    }
+
+    .contact p{margin:16px 0 0;color:var(--muted);font-size:14px}
+
+    footer{
+      padding:32px 0 44px;
+      color:#7c8798;
+      font-size:11px;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      border-top:1px solid var(--line);
+      padding-top:22px;
+    }
+
+    @media(max-width:940px){
+      .nav-links{display:none}
+      .hero{grid-template-columns:1fr;gap:44px}
+      .photo-wrap{max-width:430px}
+      .education-row{grid-template-columns:150px 1fr;gap:20px}
+      .education-meta{grid-column:2;text-align:left;margin-top:-10px}
+      .project-layout-side, .project-layout-side.image-wide{grid-template-columns:minmax(0,1fr)}
+      .result{display:none}
+      .section-head h2{white-space:normal}
+      .skills{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+    }
+
+    @media(max-width:640px){
+      .container{width:min(calc(100% - 24px),var(--max))}
+      .hero{padding-top:52px}
+      h1{font-size:50px}
+      .education-row{grid-template-columns:1fr;gap:7px;padding:24px 2px}
+      .education-meta{grid-column:auto;margin-top:6px;text-align:left}
+      .project-card{padding:22px 18px 22px}
+      .project-title{font-size:19px}
+      .project-layout-side .project-media{min-height:auto}
+      .skill-grid{grid-template-columns:1fr}
+      .pub{grid-template-columns:1fr;gap:8px}
+      .contact{padding:34px 26px}
+      .footer-inner{flex-direction:column}
+    }
+    a:focus-visible, summary:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
+</head>
+
+<body>
+  <div class="grid-bg"></div>
+
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark"></span>
+        JINGYANG ZHANG
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+</div>
+
+      <a class="btn" href="https://orcid.org/0000-0002-2863-262X" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <div class="container">
+      <header class="hero" id="about">
+        <div class="photo-wrap">
+          <img class="photo" src="assets/profile.jpg" alt="Portrait of Jingyang Zhang" />
+        </div>
+
+        <div>
+          <h1>Jingyang<br/>Zhang.</h1>
+
+          <div class="role">
+            GaN Semiconductor Devices · Power Electronics · Optoelectronic Integration
+          </div>
+
+          <p class="intro">
+            I am a second-year PhD student at HKUST with research interests spanning optics,
+            display technologies, and semiconductor devices. My experience combines computational
+            modeling with hands-on cleanroom fabrication, with proficiency in simulation tools
+            including Ansys Lumerical and Sentaurus TCAD.
+          </p>
+
+          <div class="hero-contact-line">
+            <a href="mailto:jzhanglg@connect.ust.hk">jzhanglg@connect.ust.hk</a>
+          </div>
+
+          <div class="hero-motto">
+            <div>曾梦想仗剑走天涯,才发现拿着剑地铁都TM做不了。</div>
+            <div class="hero-motto-en">I once dreamed of roaming the world with a sword, only to realize you can't fucking even take a sword on the subway.</div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#research">View research</a>
+            <a class="btn" href="https://scholar.google.com/citations?user=JfsNobsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+            <a class="btn" href="mailto:jzhanglg@connect.ust.hk">Email</a>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Academic background.</h2>
+          </div>
+
+        </div>
+
+        <div class="education-list">
+          <article class="education-row">
+            <div class="education-year">Sep 2021 — Jul 2024</div>
+            <div class="education-main">
+              <h3>Hong Kong University of Science and Technology</h3>
+              <div class="education-degree">PhD Studies · Electronic Computer Science</div>
+            </div>
+            <div class="education-meta">
+              Hong Kong, China
+            </div>
+          </article>
+
+          <article class="education-row">
+            <div class="education-year">Sep 2021 — Jul 2024</div>
+            <div class="education-main">
+              <h3>Southern University of Science and Technology</h3>
+              <div class="education-degree">M.Eng. · Electronic and Electrical Engineering</div>
+            </div>
+            <div class="education-meta">
+              Shenzhen, China<br/>
+              <strong>GPA:</strong> 3.25 (85/100)
+            </div>
+          </article>
+
+          <article class="education-row">
+            <div class="education-year">Sep 2017 — Jul 2021</div>
+            <div class="education-main">
+              <h3>Southern University of Science and Technology</h3>
+              <div class="education-degree">B.Eng. · Electronic and Electrical Engineering</div>
+            </div>
+            <div class="education-meta">
+              Shenzhen, China<br/>
+              <strong>GPA:</strong> 3.59/4 (86.61/100)<br/>
+              <strong>Ranking:</strong> 6/39 · Top 15%
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Some selected projects.</h2>
+          </div>
+
+        </div>
+
+        <div class="projects">
+          <article class="project-card">
+            <div class="project-head">
+              <span class="project-no">01 · SiC AR Display</span>
+              <h3 class="project-title">SiC Diffractive Waveguide Design for AR Near-Eye Display</h3>
+            </div>
+            <div class="project-layout-side image-wide">
+              <div class="project-media">
+                <img loading="lazy" decoding="async" src="assets/sic.png" alt="SiC AR display waveguide layout" />
+              </div>
+              <div class="project-body">
+                <p class="project-text">
+                  Designed an end-to-end SiC diffractive waveguide architecture for an AR near-eye display, with the system organized from the optical engine through the input coupler, total-internal-reflection propagation, exit-pupil expansion and output coupling to the eye. The design targets wide-field image delivery together with an expanded and spatially uniform eyebox rather than optimizing a single grating in isolation. Zemax OpticStudio NSC was used for system-level ray tracing, image reconstruction and multi-eye-position evaluation, while Ansys Lumerical was used to study diffraction behavior and coupling efficiency of the grating regions. The workflow connects grating-level optical response with full-system performance, allowing the IC, EPE and OC regions to be iteratively adjusted according to image quality, pupil coverage and irradiance uniformity across the eyebox.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <span class="project-no">02 · Optoelectronic Synapse</span>
+              <h3 class="project-title">GaN-Based Optoelectronic Synaptic Pathway for Temporal Preprocessing</h3>
+            </div>
+            <div class="project-layout-stack">
+              <div class="project-media">
+                <img loading="lazy" decoding="async" src="assets/SYNAPSE.png" alt="GaN optoelectronic synaptic pathway" />
+              </div>
+              <div class="project-body">
+                <p class="project-text">
+                  Investigated a GaN-based transmitter–waveguide–receiver pathway for optical temporal preprocessing, where electrically driven optical pulses are generated at the transmitter, routed through an integrated waveguide and converted into a time-dependent electrical response at the receiver. The study focused on whether the receiver dynamics can provide synapse-like temporal functions before conventional electronic processing. Pulse trains with different burst numbers and repetition frequencies were used to characterize accumulation, relaxation and temporal summation behavior. The measured response shows a progressive buildup with repeated excitation and a frequency-dependent transition between reset, summation and fast-response regimes, providing a device-level route for encoding temporal information in the optical link itself rather than treating the waveguide only as a passive communication channel.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <span class="project-no">03 · Breakdown Modeling</span>
+              <h3 class="project-title">Analytical Modeling of 2D Space-Charge Distribution in Vertical GaN PN Diodes</h3>
+            </div>
+            <div class="project-layout-side image-wide">
+              <div class="project-media">
+                <img loading="lazy" decoding="async" src="assets/elliptical.png" alt="Analytical modeling of 2D depletion and space-charge distribution in a vertical GaN PN diode" />
+              </div>
+              <div class="project-body">
+                <p class="project-text">
+                  Developed an analytical model for the two-dimensional depletion-boundary distribution of non-ideal vertical GaN PN junctions under reverse bias, with particular emphasis on the origin of electric-field crowding that causes premature breakdown. The model was rigorously validated against numerical TCAD simulations and used to connect depletion geometry, fixed-charge distribution and peak electric field in a unified physical description. Beyond explaining the breakdown mechanism, the framework provides a quantitative basis for designing termination structures such as junction termination extensions, guard rings and field plates. The p-GaN depletion region was further analyzed to identify how layer thickness and doping influence non-uniform charge distribution, enabling epitaxial growth parameters to become part of the breakdown-voltage optimization strategy and potentially reducing the complexity and cost of later termination processing.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <span class="project-no">04 · High Breakdown Devices Fabrication</span>
+              <h3 class="project-title">High-Breakdown Quasi-Vertical GaN PN Diode with Optimized Multi-Step JTE</h3>
+            </div>
+            <div class="project-layout-side image-wide">
+              <div class="project-media">
+                <img loading="lazy" decoding="async" src="assets/JTE.png" alt="Optimized multi-step junction termination extension for a quasi-vertical GaN PN diode" />
+              </div>
+              <div class="project-body">
+                <p class="project-text">
+                  Designed and experimentally validated a multi-step junction termination extension for quasi-vertical GaN PN diodes to suppress the severe electric-field crowding that limits reverse-bias breakdown. A step-etched termination geometry was developed from the shape of the depletion boundary, with elliptical boundary fitting used to redistribute the electric field away from the junction edge and reduce the local peak field. Multiple termination layouts were first compared through device simulation and were then fabricated using controlled ICP etching for direct experimental verification. The optimized structure produced a substantially more uniform electric-field distribution and achieved a measured breakdown voltage of 970 V, compared with 560 V for the reference device, while retaining comparable forward characteristics. The work demonstrates a practical field-management strategy for improving the voltage capability and reliability of high-power GaN diodes.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <span class="project-no">05 · Integrated Optoelectronics</span>
+              <h3 class="project-title">In-situ Integrated HEMT–LED by Selective Epitaxy of p-GaN</h3>
+            </div>
+            <div class="project-layout-side image-wide">
+              <div class="project-media">
+                <img loading="lazy" decoding="async" src="assets/REGROWTH.png" alt="HEMT–LED selective p-GaN epitaxy and characterization" />
+              </div>
+              <div class="project-body">
+                <p class="project-text">
+                  Demonstrated a HEMT-controlled ultraviolet emitter by selectively regrowing p-GaN at the drain of an AlGaN/GaN HEMT, converting part of the transistor structure itself into a light-emitting junction rather than integrating a separate LED. The regrown p-GaN contacts the high-density two-dimensional electron gas to form a lateral p-GaN/2DEG junction, where electron–hole recombination produces ultraviolet electroluminescence. Sentaurus TCAD was used to analyze the band structure and carrier transport mechanism, while the device was fabricated through mesa isolation, dielectric processing, selective p-GaN epitaxy and metal deposition. The fabricated device exhibited a 374.9 nm emission peak whose intensity could be modulated by the gate voltage. The emitted UV light was also used to excite red, green and blue quantum dots, demonstrating a pathway from transistor-level electrical control to compact color-conversion display functionality.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Publications.</h2>
+          </div>
+        </div>
+
+        <div class="pubs">
+          <article class="pub">
+            <div class="journal">IEEE EDL · 2022</div>
+            <div>
+              <div class="pub-title">HEMT Controlled Ultraviolet Light Emitters Enabled by P-GaN Selective Epitaxial Growth</div>
+              <div class="pub-authors"><strong class="pub-me">Jingyang Zhang</strong>, Wei Huang, Zhihao Su, Zhiwen Liang, Qi Wang, Au Yeng Wai Lun, D. W. Zhang, Zhaojun Liu</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">APL ED · 2025</div>
+            <div>
+              <div class="pub-title">High Breakdown Voltage Quasi-Vertical PN Diode with Optimized Multiple Junction Termination Extensions</div>
+              <div class="pub-authors"><strong class="pub-me">Jingyang Zhang</strong>, Wei Huang, Wai Lun Au Yeung, Yinan Zhang, Wenhao Zhang, D. W. Zhang, Zhaojun Liu</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">Micro &amp; Nanostructures · 2025</div>
+            <div>
+              <div class="pub-title">Analytical Modeling of 2-Dimensional Space Charge Distribution for Vertical GaN Diode Breakdown Voltage Optimization</div>
+              <div class="pub-authors"><strong class="pub-me">Jingyang Zhang</strong>, Yibo Liu, Feng Feng, Xinyi Liu, Yujia Sheng, Zichun Li, Shan Huang, Fion Sze-Yan Yeung, Man-Chun Tseng, Zhaojun Liu</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">Adv. Optical Mater. · 2026</div>
+            <div>
+              <div class="pub-title">Strain-Driven Monolithic Nanowire LEDs for Pixel-Level Color Control in High-Resolution Displays</div>
+              <div class="pub-authors">Zichun Li, Yibo Liu, Zhaoyong Liu, Feng Feng, Shan Huang, <strong class="pub-me">Jingyang Zhang</strong>, Yinan Zhang, Fion Yeung, Manchun Tseng, Hoi Sing Kwok, Zhaojun Liu</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">Advanced Science · 2025</div>
+            <div>
+              <div class="pub-title">Vertical GaN-On-GaN Micro-LEDs for Near-Eye Displays</div>
+              <div class="pub-authors">Zichun Li, Yibo Liu, Haonan Jiang, Feng Feng, <strong class="pub-me">Jingyang Zhang</strong>, Shan Huang, Fion Yeung, Manchun Tseng, Man Hoi Wong, Hoi Sing Kwok, Zhaojun Liu</div>
+            </div>
+          </article>
+        </div>
+
+        <details class="pub-more">
+          <summary>
+            <span class="summary-open">Show all publications</span>
+            <span class="summary-close">Show fewer publications</span>
+            <span class="summary-arrow" aria-hidden="true">↓</span>
+          </summary>
+          <div class="pubs pub-hidden-list">
+          <article class="pub">
+            <div class="journal">APL · 2026</div>
+            <div>
+              <div class="pub-title">Comparative Study of Aging-Induced Optical and Electrical Degradation and Dynamic Stability in GaN-on-Sapphire and GaN-on-GaN Micro-LEDs</div>
+              <div class="pub-authors">Shan Huang, Zichun Li, Yibo Liu, Feng Feng, <strong class="pub-me">Jingyang Zhang</strong>, Xinyi Liu, Ruixiang Zhu, Yinan Zhang, Zhaoyong Liu, Fion Yeung, Manchun Tseng, Hoi Sing Kwok, Man Hoi Wong, Zhaojun Liu</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">SID · 2026</div>
+            <div>
+              <div class="pub-title">P-10.6: Fabrication of Nanowire LED Arrays via Electron Beam Lithography</div>
+              <div class="pub-authors">Zichun Li, Yibo Liu, Feng Feng, Shan Huang, Zhaoyong Liu, <strong class="pub-me">Jingyang Zhang</strong>, Yinan Zhang, Chengfeng Qiu, Hoi Sing Kwok, Zhaojun Liu</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">SID · 2026</div>
+            <div>
+              <div class="pub-title">P-168: Invited Poster: Fabrication of Nanowire LED Arrays via Electron Beam Lithography</div>
+              <div class="pub-authors">Zichun Li, Yibo Liu, Feng Feng, Shan Huang, <strong class="pub-me">Jingyang Zhang</strong>, Yinan Zhang, Hoi Sing Kwok, Zhaojun Liu</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">SID · 2026</div>
+            <div>
+              <div class="pub-title">13-1: Featuring on TM-Polarized Sidewall Emission for AlGaN Deep-Ultraviolet Micro-LED with Enhanced Light Extraction Efficiency</div>
+              <div class="pub-authors">Feng Feng, Shan Huang, Xinyi Liu, Yujia Sheng, Zichun Li, Zhaoyong Liu, <strong class="pub-me">Jingyang Zhang</strong>, Yinan Zhang, Yibo Liu, Fion Sze-Yan Yeung, Man-Chun Tseng, Zhaojun Liu, Hoi-Sing Kwok</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">SID · 2026</div>
+            <div>
+              <div class="pub-title">102-2: Featuring on TM-Polarized Sidewall Emission for AlGaN Deep-Ultraviolet Micro-LED with Enhanced Light Extraction Efficiency</div>
+              <div class="pub-authors">Feng Feng, Shan Huang, Xinyi Liu, Yujia Sheng, Zichun Li, Zhaoyong Liu, <strong class="pub-me">Jingyang Zhang</strong>, Yinan Zhang, Yibo Liu, Fion Sze-Yan Yeung, Man-Chun Tseng, Zhaojun Liu, Hoi-Sing Kwok</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">SID · 2025</div>
+            <div>
+              <div class="pub-title">P-242: Late-News Poster: Boosting Light Extraction in AlGaN-Based Deep Ultraviolet Micro-LEDs Through p-GaN Layer Removal</div>
+              <div class="pub-authors">Shan Huang, Feng Feng, Yibo Liu, <strong class="pub-me">Jingyang Zhang</strong>, Zichun Li, Xinyi Liu, Ruixiang Zhu, Man Hoi Wong, Zhaojun Liu, Hoi Sing Kwok</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">SID · 2025</div>
+            <div>
+              <div class="pub-title">P-10.19: Boosting Light Extraction in AlGaN-Based Deep Ultraviolet Micro-LEDs Through p-GaN Layer Removal</div>
+              <div class="pub-authors">Shan Huang, Feng Feng, Yibo Liu, <strong class="pub-me">Jingyang Zhang</strong>, Zichun Li, Xinyi Liu, Ruixiang Zhu, Man Hoi Wong, Zhaojun Liu, Hoi Sing Kwok</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">SID · 2025</div>
+            <div>
+              <div class="pub-title">75-1: Revolutionizing Photolithography: High-Power AlGaN Deep-UV MicroLED Displays for Maskless Pattern Transfer in Semiconductor Fabrication</div>
+              <div class="pub-authors">Feng Feng, Yibo Liu, Yujia Sheng, Xinyi Liu, Zichun Li, Zhaoyong Liu, Shan Huang, <strong class="pub-me">Jingyang Zhang</strong>, Fion Sze-Yan Yeung, Man-Chun Tseng, Jr-Hau He, Zhaojun Liu, Hoi-Sing Kwok</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">SID · 2025</div>
+            <div>
+              <div class="pub-title">P-10.18: Improving Display Performance of MicroLED Devices Through Ion Implantation for Pixel Isolation</div>
+              <div class="pub-authors">Zichun Li, Yibo Liu, Feng Feng, <strong class="pub-me">Jingyang Zhang</strong>, Shan Huang, Man Hoi Wong, Zhaojun Liu</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">IEEE EDTM · 2025</div>
+            <div>
+              <div class="pub-title">Study of the Characteristics of GaN Substrate-Based MicroLEDs with Different Epitaxial Structures</div>
+              <div class="pub-authors">Shan Huang, Yibo Liu, Feng Feng, <strong class="pub-me">Jingyang Zhang</strong>, Zichun Li, Man Hoi Wong, Zhaojun Liu</div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="journal">Optics Express · 2025</div>
+            <div>
+              <div class="pub-title">Enhancing the Optical and Electrical Performance of a Micro-LED with GaN Substrate by Optimizing Structural Parameters</div>
+              <div class="pub-authors">Shan Huang, Yibo Liu, Feng Feng, <strong class="pub-me">Jingyang Zhang</strong>, Xinyi Liu, Zichun Li, Man Hoi Wong, Hoi Sing Kwok, Zhaojun Liu</div>
+            </div>
+          </article>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-inner">
+        <span>© 2026 Jingyang Zhang</span>
+        <span>Research Portfolio</span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
